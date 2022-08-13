@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/bonding-curves/ExponentialCurve.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/bonding-curves/</a> ExponentialCurve.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: AGPL-3.0
+pragma solidity ^0.8.0;
+&nbsp;
+import {ICurve} from "./ICurve.sol";
+import {CurveErrorCodes} from "./CurveErrorCodes.sol";
+import {FixedPointMathLib} from "./../solmate/utils/FixedPointMathLib.sol";
+&nbsp;
+/*
+    @author 0xmons and boredGenius
+    @notice Bonding curve logic for an exponential curve, where each buy/sell changes spot price by multiplying/dividing delta
+*/
+contract ExponentialCurve is ICurve, CurveErrorCodes {
+    using FixedPointMathLib for uint256;
+&nbsp;
+    // minimum price to prevent numerical issues
+    uint256 public constant MIN_PRICE = 1 gwei;
+&nbsp;
+    /**
+        @dev See {ICurve-validateDelta}
+     */
+<span class="fstat-no" title="function not covered" >    function validateDelta(uint128 delta)</span>
+        external
+        pure
+        override
+        returns (bool)
+    {
+<span class="cstat-no" title="statement not covered" >        return delta &gt; FixedPointMathLib.WAD;</span>
+    }
+&nbsp;
+    /**
+        @dev See {ICurve-validateSpotPrice}
+     */
+<span class="fstat-no" title="function not covered" >    function validateSpotPrice(uint128 newSpotPrice)</span>
+        external
+        pure
+        override
+        returns (bool)
+    {
+<span class="cstat-no" title="statement not covered" >        return newSpotPrice &gt;= MIN_PRICE;</span>
+    }
+&nbsp;
+    /**
+        @dev See {ICurve-getBuyInfo}
+     */
+<span class="fstat-no" title="function not covered" >    function getBuyInfo(</span>
+        uint128 spotPrice,
+        uint128 delta,
+        uint256 numItems,
+        uint256 feeMultiplier,
+        uint256 protocolFeeMultiplier
+    )
+        external
+        pure
+        override
+        returns (
+            Error error,
+            uint128 newSpotPrice,
+            uint128 newDelta,
+            uint256 inputValue,
+            uint256 protocolFee
+        )
+    {
+        // NOTE: we assume delta is &gt; 1, as checked by validateDelta()
+        // We only calculate changes for buying 1 or more NFTs
+<span class="cstat-no" title="statement not covered" >        if (numItems == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return (Error.INVALID_NUMITEMS, 0, 0, 0, 0);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 deltaPowN = uint256(delta).fpow(</span>
+            numItems,
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // For an exponential curve, the spot price is multiplied by delta for each item bought
+<span class="cstat-no" title="statement not covered" >        uint256 newSpotPrice_ = uint256(spotPrice).fmul(</span>
+            deltaPowN,
+            FixedPointMathLib.WAD
+        );
+<span class="cstat-no" title="statement not covered" >        if (newSpotPrice_ &gt; type(uint128).max) {</span>
+<span class="cstat-no" title="statement not covered" >            return (Error.SPOT_PRICE_OVERFLOW, 0, 0, 0, 0);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        newSpotPrice = uint128(newSpotPrice_)</span>;
+&nbsp;
+        // Spot price is assumed to be the instant sell price. To avoid arbitraging LPs, we adjust the buy price upwards.
+        // If spot price for buy and sell were the same, then someone could buy 1 NFT and then sell for immediate profit.
+        // EX: Let S be spot price. Then buying 1 NFT costs S ETH, now new spot price is (S * delta).
+        // The same person could then sell for (S * delta) ETH, netting them delta ETH profit.
+        // If spot price for buy and sell differ by delta, then buying costs (S * delta) ETH.
+        // The new spot price would become (S * delta), so selling would also yield (S * delta) ETH.
+<span class="cstat-no" title="statement not covered" >        uint256 buySpotPrice = uint256(spotPrice).fmul(</span>
+            delta,
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // If the user buys n items, then the total cost is equal to:
+        // buySpotPrice + (delta * buySpotPrice) + (delta^2 * buySpotPrice) + ... (delta^(numItems - 1) * buySpotPrice)
+        // This is equal to buySpotPrice * (delta^n - 1) / (delta - 1)
+<span class="cstat-no" title="statement not covered" >        inputValue = buySpotPrice.fmul(</span>
+            (deltaPowN - FixedPointMathLib.WAD).fdiv(
+                delta - FixedPointMathLib.WAD,
+                FixedPointMathLib.WAD
+            ),
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // Account for the protocol fee, a flat percentage of the buy amount
+<span class="cstat-no" title="statement not covered" >        protocolFee = inputValue.fmul(</span>
+            protocolFeeMultiplier,
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // Account for the trade fee, only for Trade pools
+<span class="cstat-no" title="statement not covered" >        inputValue += inputValue.fmul(feeMultiplier, FixedPointMathLib.WAD)</span>;
+&nbsp;
+        // Add the protocol fee to the required input amount
+<span class="cstat-no" title="statement not covered" >        inputValue += protocolFee</span>;
+&nbsp;
+        // Keep delta the same
+<span class="cstat-no" title="statement not covered" >        newDelta = delta</span>;
+&nbsp;
+        // If we got all the way here, no math error happened
+<span class="cstat-no" title="statement not covered" >        error = Error.OK</span>;
+    }
+&nbsp;
+    /**
+        @dev See {ICurve-getSellInfo}
+        If newSpotPrice is less than MIN_PRICE, newSpotPrice is set to MIN_PRICE instead.
+        This is to prevent the spot price from ever becoming 0, which would decouple the price
+        from the bonding curve (since 0 * delta is still 0)
+     */
+<span class="fstat-no" title="function not covered" >    function getSellInfo(</span>
+        uint128 spotPrice,
+        uint128 delta,
+        uint256 numItems,
+        uint256 feeMultiplier,
+        uint256 protocolFeeMultiplier
+    )
+        external
+        pure
+        override
+        returns (
+            Error error,
+            uint128 newSpotPrice,
+            uint128 newDelta,
+            uint256 outputValue,
+            uint256 protocolFee
+        )
+    {
+        // NOTE: we assume delta is &gt; 1, as checked by validateDelta()
+&nbsp;
+        // We only calculate changes for buying 1 or more NFTs
+<span class="cstat-no" title="statement not covered" >        if (numItems == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return (Error.INVALID_NUMITEMS, 0, 0, 0, 0);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 invDelta = FixedPointMathLib.WAD.fdiv(</span>
+            delta,
+            FixedPointMathLib.WAD
+        );
+<span class="cstat-no" title="statement not covered" >        uint256 invDeltaPowN = invDelta.fpow(numItems, FixedPointMathLib.WAD);</span>
+&nbsp;
+        // For an exponential curve, the spot price is divided by delta for each item sold
+        // safe to convert newSpotPrice directly into uint128 since we know newSpotPrice &lt;= spotPrice
+        // and spotPrice &lt;= type(uint128).max
+<span class="cstat-no" title="statement not covered" >        newSpotPrice = uint128(</span>
+            uint256(spotPrice).fmul(invDeltaPowN, FixedPointMathLib.WAD)
+        );
+<span class="cstat-no" title="statement not covered" >        if (newSpotPrice &lt; MIN_PRICE) {</span>
+<span class="cstat-no" title="statement not covered" >            newSpotPrice = uint128(MIN_PRICE)</span>;
+        }
+&nbsp;
+        // If the user sells n items, then the total revenue is equal to:
+        // spotPrice + ((1 / delta) * spotPrice) + ((1 / delta)^2 * spotPrice) + ... ((1 / delta)^(numItems - 1) * spotPrice)
+        // This is equal to spotPrice * (1 - (1 / delta^n)) / (1 - (1 / delta))
+<span class="cstat-no" title="statement not covered" >        outputValue = uint256(spotPrice).fmul(</span>
+            (FixedPointMathLib.WAD - invDeltaPowN).fdiv(
+                FixedPointMathLib.WAD - invDelta,
+                FixedPointMathLib.WAD
+            ),
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // Account for the protocol fee, a flat percentage of the sell amount
+<span class="cstat-no" title="statement not covered" >        protocolFee = outputValue.fmul(</span>
+            protocolFeeMultiplier,
+            FixedPointMathLib.WAD
+        );
+&nbsp;
+        // Account for the trade fee, only for Trade pools
+<span class="cstat-no" title="statement not covered" >        outputValue -= outputValue.fmul(feeMultiplier, FixedPointMathLib.WAD)</span>;
+&nbsp;
+        // Remove the protocol fee from the output amount
+<span class="cstat-no" title="statement not covered" >        outputValue -= protocolFee</span>;
+&nbsp;
+        // Keep delta the same
+<span class="cstat-no" title="statement not covered" >        newDelta = delta</span>;
+&nbsp;
+        // If we got all the way here, no math error happened
+<span class="cstat-no" title="statement not covered" >        error = Error.OK</span>;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 06 2022 05:02:09 GMT+0100 (British Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

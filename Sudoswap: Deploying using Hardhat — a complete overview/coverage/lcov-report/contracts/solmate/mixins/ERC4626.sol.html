@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/solmate/mixins/ERC4626.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/solmate/mixins/</a> ERC4626.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity &gt;=0.8.0;
+&nbsp;
+import {ERC20} from "../tokens/ERC20.sol";
+import {SafeTransferLib} from "../utils/SafeTransferLib.sol";
+import {FixedPointMathLib} from "../utils/FixedPointMathLib.sol";
+&nbsp;
+/// @notice Minimal ERC4626 tokenized Vault implementation.
+/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/mixins/ERC4626.sol)
+abstract contract ERC4626 is ERC20 {
+    using SafeTransferLib for ERC20;
+    using FixedPointMathLib for uint256;
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                                 EVENTS
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+    event Deposit(address indexed caller, address indexed owner, uint256 assets, uint256 shares);
+&nbsp;
+    event Withdraw(
+        address indexed caller,
+        address indexed receiver,
+        address indexed owner,
+        uint256 assets,
+        uint256 shares
+    );
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                               IMMUTABLES
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+    ERC20 public immutable asset;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        ERC20 _asset,
+        string memory _name,
+        string memory _symbol
+    ) ERC20(_name, _symbol, _asset.decimals()) {
+<span class="cstat-no" title="statement not covered" >        asset = _asset</span>;
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                        DEPOSIT/WITHDRAWAL LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function deposit(uint256 assets, address receiver) public virtual returns (uint256 shares) {</span>
+        // Check for rounding error since we round down in previewDeposit.
+<span class="cstat-no" title="statement not covered" >        require((shares = previewDeposit(assets)) != 0, "ZERO_SHARES")</span>;
+&nbsp;
+        // Need to transfer before minting or ERC777s could reenter.
+<span class="cstat-no" title="statement not covered" >        asset.safeTransferFrom(msg.sender, address(this), assets)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _mint(receiver, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Deposit(msg.sender, receiver, assets, shares);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        afterDeposit(assets, shares)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mint(uint256 shares, address receiver) public virtual returns (uint256 assets) {</span>
+<span class="cstat-no" title="statement not covered" >        assets = previewMint(shares)</span>; // No need to check for rounding error, previewMint rounds up.
+&nbsp;
+        // Need to transfer before minting or ERC777s could reenter.
+<span class="cstat-no" title="statement not covered" >        asset.safeTransferFrom(msg.sender, address(this), assets)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _mint(receiver, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Deposit(msg.sender, receiver, assets, shares);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        afterDeposit(assets, shares)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function withdraw(</span>
+        uint256 assets,
+        address receiver,
+        address owner
+    ) public virtual returns (uint256 shares) {
+<span class="cstat-no" title="statement not covered" >        shares = previewWithdraw(assets)</span>; // No need to check for rounding error, previewWithdraw rounds up.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (msg.sender != owner) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 allowed = allowance[owner][msg.sender];</span> // Saves gas for limited approvals.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (allowed != type(uint256).max) <span class="cstat-no" title="statement not covered" >allowance[owner][msg.sender] = allowed - shares</span>;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        beforeWithdraw(assets, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _burn(owner, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Withdraw(msg.sender, receiver, owner, assets, shares);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        asset.safeTransfer(receiver, assets)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function redeem(</span>
+        uint256 shares,
+        address receiver,
+        address owner
+    ) public virtual returns (uint256 assets) {
+<span class="cstat-no" title="statement not covered" >        if (msg.sender != owner) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 allowed = allowance[owner][msg.sender];</span> // Saves gas for limited approvals.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (allowed != type(uint256).max) <span class="cstat-no" title="statement not covered" >allowance[owner][msg.sender] = allowed - shares</span>;</span>
+        }
+&nbsp;
+        // Check for rounding error since we round down in previewRedeem.
+<span class="cstat-no" title="statement not covered" >        require((assets = previewRedeem(shares)) != 0, "ZERO_ASSETS")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        beforeWithdraw(assets, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _burn(owner, shares)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Withdraw(msg.sender, receiver, owner, assets, shares);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        asset.safeTransfer(receiver, assets)</span>;
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                            ACCOUNTING LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+    function totalAssets() public view virtual returns (uint256);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function convertToShares(uint256 assets) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 supply = totalSupply;</span> // Saves an extra SLOAD if totalSupply is non-zero.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return supply == 0 ? assets : assets.mulDivDown(supply, totalAssets());</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function convertToAssets(uint256 shares) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 supply = totalSupply;</span> // Saves an extra SLOAD if totalSupply is non-zero.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return supply == 0 ? shares : shares.mulDivDown(totalAssets(), supply);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function previewDeposit(uint256 assets) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return convertToShares(assets);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function previewMint(uint256 shares) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 supply = totalSupply;</span> // Saves an extra SLOAD if totalSupply is non-zero.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return supply == 0 ? shares : shares.mulDivUp(totalAssets(), supply);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function previewWithdraw(uint256 assets) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 supply = totalSupply;</span> // Saves an extra SLOAD if totalSupply is non-zero.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return supply == 0 ? assets : assets.mulDivUp(supply, totalAssets());</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function previewRedeem(uint256 shares) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return convertToAssets(shares);</span>
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                     DEPOSIT/WITHDRAWAL LIMIT LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function maxDeposit(address) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return type(uint256).max;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function maxMint(address) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return type(uint256).max;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function maxWithdraw(address owner) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return convertToAssets(balanceOf[owner]);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function maxRedeem(address owner) public view virtual returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return balanceOf[owner];</span>
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                          INTERNAL HOOKS LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function beforeWithdraw(uint256 assets, uint256 shares) internal virtual {}</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function afterDeposit(uint256 assets, uint256 shares) internal virtual {}</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 06 2022 05:02:09 GMT+0100 (British Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

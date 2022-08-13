@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/solmate/utils/SSTORE2.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/solmate/utils/</a> SSTORE2.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity &gt;=0.8.0;
+&nbsp;
+/// @notice Read and write to persistent storage at a fraction of the cost.
+/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SSTORE2.sol)
+/// @author Modified from 0xSequence (https://github.com/0xSequence/sstore2/blob/master/contracts/SSTORE2.sol)
+library SSTORE2 {
+    uint256 internal constant DATA_OFFSET = 1; // We skip the first byte as it's a STOP opcode to ensure the contract can't be called.
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                               WRITE LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function write(bytes memory data) internal returns (address pointer) {</span>
+        // Prefix the bytecode with a STOP opcode to ensure it cannot be called.
+<span class="cstat-no" title="statement not covered" >        bytes memory runtimeCode = abi.encodePacked(hex"00", data);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bytes memory creationCode = abi.encodePacked(</span>
+            //---------------------------------------------------------------------------------------------------------------//
+            // Opcode  | Opcode + Arguments  | Description  | Stack View                                                     //
+            //---------------------------------------------------------------------------------------------------------------//
+            // 0x60    |  0x600B             | PUSH1 11     | codeOffset                                                     //
+            // 0x59    |  0x59               | MSIZE        | 0 codeOffset                                                   //
+            // 0x81    |  0x81               | DUP2         | codeOffset 0 codeOffset                                        //
+            // 0x38    |  0x38               | CODESIZE     | codeSize codeOffset 0 codeOffset                               //
+            // 0x03    |  0x03               | SUB          | (codeSize - codeOffset) 0 codeOffset                           //
+            // 0x80    |  0x80               | DUP          | (codeSize - codeOffset) (codeSize - codeOffset) 0 codeOffset   //
+            // 0x92    |  0x92               | SWAP3        | codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset)   //
+            // 0x59    |  0x59               | MSIZE        | 0 codeOffset (codeSize - codeOffset) 0 (codeSize - codeOffset) //
+            // 0x39    |  0x39               | CODECOPY     | 0 (codeSize - codeOffset)                                      //
+            // 0xf3    |  0xf3               | RETURN       |                                                                //
+            //---------------------------------------------------------------------------------------------------------------//
+            hex"60_0B_59_81_38_03_80_92_59_39_F3", // Returns all code in the contract except for the first 11 (0B in hex) bytes.
+            runtimeCode // The bytecode we want the contract to have after deployment. Capped at 1 byte less than the code size limit.
+        );
+&nbsp;
+        assembly {
+            // Deploy a new contract with the generated creation code.
+            // We start 32 bytes into the code to avoid copying the byte length.
+            pointer := create(0, add(creationCode, 32), mload(creationCode))
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(pointer != address(0), "DEPLOYMENT_FAILED")</span>;
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                               READ LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function read(address pointer) internal view returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return readBytecode(pointer, DATA_OFFSET, pointer.code.length - DATA_OFFSET);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function read(address pointer, uint256 start) internal view returns (bytes memory) {</span>
+<span class="cstat-no" title="statement not covered" >        start += DATA_OFFSET</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return readBytecode(pointer, start, pointer.code.length - start);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function read(</span>
+        address pointer,
+        uint256 start,
+        uint256 end
+    ) internal view returns (bytes memory) {
+<span class="cstat-no" title="statement not covered" >        start += DATA_OFFSET</span>;
+<span class="cstat-no" title="statement not covered" >        end += DATA_OFFSET</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(pointer.code.length &gt;= end, "OUT_OF_BOUNDS")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return readBytecode(pointer, start, end - start);</span>
+    }
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                          INTERNAL HELPER LOGIC
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function readBytecode(</span>
+        address pointer,
+        uint256 start,
+        uint256 size
+    ) private view returns (bytes memory data) {
+        assembly {
+            // Get a pointer to some free memory.
+            data := mload(0x40)
+&nbsp;
+            // Update the free memory pointer to prevent overriding our data.
+            // We use and(x, not(31)) as a cheaper equivalent to sub(x, mod(x, 32)).
+            // Adding 31 to size and running the result through the logic above ensures
+            // the memory pointer remains word-aligned, following the Solidity convention.
+            mstore(0x40, add(data, and(add(add(size, 32), 31), not(31))))
+&nbsp;
+            // Store the size of the data in the first 32 byte chunk of free memory.
+            mstore(data, size)
+&nbsp;
+            // Copy the code into memory right after the 32 bytes we used to store the size.
+            extcodecopy(pointer, add(data, 32), start, size)
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 06 2022 05:02:09 GMT+0100 (British Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

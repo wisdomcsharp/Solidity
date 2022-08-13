@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/solmate/utils/CREATE3.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/solmate/utils/</a> CREATE3.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/9</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity &gt;=0.8.0;
+&nbsp;
+import {Bytes32AddressLib} from "./Bytes32AddressLib.sol";
+&nbsp;
+/// @notice Deploy to deterministic addresses without an initcode factor.
+/// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/CREATE3.sol)
+/// @author Modified from 0xSequence (https://github.com/0xSequence/create3/blob/master/contracts/Create3.sol)
+library CREATE3 {
+    using Bytes32AddressLib for bytes32;
+&nbsp;
+    //--------------------------------------------------------------------------------//
+    // Opcode     | Opcode + Arguments    | Description      | Stack View             //
+    //--------------------------------------------------------------------------------//
+    // 0x36       |  0x36                 | CALLDATASIZE     | size                   //
+    // 0x3d       |  0x3d                 | RETURNDATASIZE   | 0 size                 //
+    // 0x3d       |  0x3d                 | RETURNDATASIZE   | 0 0 size               //
+    // 0x37       |  0x37                 | CALLDATACOPY     |                        //
+    // 0x36       |  0x36                 | CALLDATASIZE     | size                   //
+    // 0x3d       |  0x3d                 | RETURNDATASIZE   | 0 size                 //
+    // 0x34       |  0x34                 | CALLVALUE        | value 0 size           //
+    // 0xf0       |  0xf0                 | CREATE           | newContract            //
+    //--------------------------------------------------------------------------------//
+    // Opcode     | Opcode + Arguments    | Description      | Stack View             //
+    //--------------------------------------------------------------------------------//
+    // 0x67       |  0x67XXXXXXXXXXXXXXXX | PUSH8 bytecode   | bytecode               //
+    // 0x3d       |  0x3d                 | RETURNDATASIZE   | 0 bytecode             //
+    // 0x52       |  0x52                 | MSTORE           |                        //
+    // 0x60       |  0x6008               | PUSH1 08         | 8                      //
+    // 0x60       |  0x6018               | PUSH1 18         | 24 8                   //
+    // 0xf3       |  0xf3                 | RETURN           |                        //
+    //--------------------------------------------------------------------------------//
+    bytes internal constant PROXY_BYTECODE = hex"67_36_3d_3d_37_36_3d_34_f0_3d_52_60_08_60_18_f3";
+&nbsp;
+    bytes32 internal constant PROXY_BYTECODE_HASH = keccak256(PROXY_BYTECODE);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function deploy(</span>
+        bytes32 salt,
+        bytes memory creationCode,
+        uint256 value
+    ) internal returns (address deployed) {
+<span class="cstat-no" title="statement not covered" >        bytes memory proxyChildBytecode = PROXY_BYTECODE;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address proxy;</span>
+        assembly {
+            // Deploy a new contract with our pre-made bytecode via CREATE2.
+            // We start 32 bytes into the code to avoid copying the byte length.
+            proxy := create2(0, add(proxyChildBytecode, 32), mload(proxyChildBytecode), salt)
+        }
+<span class="cstat-no" title="statement not covered" >        require(proxy != address(0), "DEPLOYMENT_FAILED")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        deployed = getDeployed(salt)</span>;
+<span class="cstat-no" title="statement not covered" >        (bool success, ) = proxy.call{value: value}(creationCode);</span>
+<span class="cstat-no" title="statement not covered" >        require(success &amp;&amp; deployed.code.length != 0, "INITIALIZATION_FAILED")</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getDeployed(bytes32 salt) internal view returns (address) {</span>
+<span class="cstat-no" title="statement not covered" >        address proxy = keccak256(</span>
+            abi.encodePacked(
+                // Prefix:
+                bytes1(0xFF),
+                // Creator:
+                address(this),
+                // Salt:
+                salt,
+                // Bytecode hash:
+                PROXY_BYTECODE_HASH
+            )
+        ).fromLast20Bytes();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return</span>
+            keccak256(
+                abi.encodePacked(
+                    // 0xd6 = 0xc0 (short RLP prefix) + 0x16 (length of: 0x94 ++ proxy ++ 0x01)
+                    // 0x94 = 0x80 + 0x14 (0x14 = the length of an address, 20 bytes, in hex)
+                    hex"d6_94",
+                    proxy,
+                    hex"01" // Nonce of the proxy contract (1)
+                )
+            ).fromLast20Bytes();
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 06 2022 05:02:09 GMT+0100 (British Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

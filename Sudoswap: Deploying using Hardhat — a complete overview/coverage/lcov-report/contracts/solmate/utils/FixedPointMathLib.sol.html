@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/solmate/utils/FixedPointMathLib.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/solmate/utils/</a> FixedPointMathLib.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: AGPL-3.0-only
+pragma solidity &gt;=0.8.0;
+&nbsp;
+/// @notice Arithmetic library with operations for fixed-point numbers.
+/// @author Modified from Dappsys V2 (https://github.com/dapp-org/dappsys-v2/blob/main/src/math.sol)
+library FixedPointMathLib {
+    /*///////////////////////////////////////////////////////////////
+                        COMMON DECIMAL DEFINITIONS
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+    uint256 internal constant YAD = 8;
+    uint256 internal constant WAD = 18;
+    uint256 internal constant RAY = 27;
+    uint256 internal constant RAD = 45;
+&nbsp;
+    /*///////////////////////////////////////////////////////////////
+                         FIXED POINT OPERATIONS
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+    /*//////////////////////////////////////////////////////////////
+                    LOW LEVEL FIXED POINT OPERATIONS
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mulDivDown(</span>
+        uint256 x,
+        uint256 y,
+        uint256 denominator
+    ) internal pure returns (uint256 z) {
+        assembly {
+            // Store x * y in z for now.
+            z := mul(x, y)
+&nbsp;
+            // Equivalent to require(denominator != 0 &amp;&amp; (x == 0 || (x * y) / x == y))
+            if iszero(
+                and(
+                    iszero(iszero(denominator)),
+                    or(iszero(x), eq(div(z, x), y))
+                )
+            ) {
+                revert(0, 0)
+            }
+&nbsp;
+            // Divide z by the denominator.
+            z := div(z, denominator)
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mulDivUp(</span>
+        uint256 x,
+        uint256 y,
+        uint256 denominator
+    ) internal pure returns (uint256 z) {
+        assembly {
+            // Store x * y in z for now.
+            z := mul(x, y)
+&nbsp;
+            // Equivalent to require(denominator != 0 &amp;&amp; (x == 0 || (x * y) / x == y))
+            if iszero(
+                and(
+                    iszero(iszero(denominator)),
+                    or(iszero(x), eq(div(z, x), y))
+                )
+            ) {
+                revert(0, 0)
+            }
+&nbsp;
+            // First, divide z - 1 by the denominator and add 1.
+            // We allow z - 1 to underflow if z is 0, because we multiply the
+            // end result by 0 if z is zero, ensuring we return 0 if z is zero.
+            z := mul(iszero(iszero(z)), add(div(sub(z, 1), denominator), 1))
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function fmul(</span>
+        uint256 x,
+        uint256 y,
+        uint256 decimals
+    ) internal pure returns (uint256 z) {
+<span class="cstat-no" title="statement not covered" >        z = (x * y) / 10**decimals</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function fdiv(</span>
+        uint256 x,
+        uint256 y,
+        uint256 decimals
+    ) internal pure returns (uint256 z) {
+<span class="cstat-no" title="statement not covered" >        z = (x * 10**decimals) / y</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function fpow(</span>
+        uint256 x,
+        uint256 n,
+        uint256 decimals
+    ) internal pure returns (uint256 z) {
+<span class="cstat-no" title="statement not covered" >        uint256 b = 10**decimals;</span>
+&nbsp;
+        unchecked {
+            assembly {
+                switch x
+                case 0 {
+                    switch n
+                    case 0 {
+                        z := b
+                    }
+                    default {
+                        z := 0
+                    }
+                }
+                default {
+                    switch mod(n, 2)
+                    case 0 {
+                        z := b
+                    }
+                    default {
+                        z := x
+                    }
+                    let half := div(b, 2)
+                    for {
+                        n := div(n, 2)
+                    } n {
+                        n := div(n, 2)
+                    } {
+                        let xx := mul(x, x)
+                        if iszero(eq(div(xx, x), x)) {
+                            revert(0, 0)
+                        }
+                        let xxRound := add(xx, half)
+                        if lt(xxRound, xx) {
+                            revert(0, 0)
+                        }
+                        x := div(xxRound, b)
+                        if mod(n, 2) {
+                            let zx := mul(z, x)
+                            if and(
+                                iszero(iszero(x)),
+                                iszero(eq(div(zx, x), z))
+                            ) {
+                                revert(0, 0)
+                            }
+                            let zxRound := add(zx, half)
+                            if lt(zxRound, zx) {
+                                revert(0, 0)
+                            }
+                            z := div(zxRound, b)
+                        }
+                    }
+                }
+            }
+        }
+    }
+&nbsp;
+    /*///////////////////////////////////////////////////////////////
+                          GENERAL NUMBER UTILS
+    //////////////////////////////////////////////////////////////*/
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function sqrt(uint256 y) internal pure returns (uint256 z) {</span>
+<span class="cstat-no" title="statement not covered" >        if (y &gt; 3) {</span>
+<span class="cstat-no" title="statement not covered" >            z = y</span>;
+<span class="cstat-no" title="statement not covered" >            uint256 x = y / 2 + 1;</span>
+<span class="cstat-no" title="statement not covered" >            while (x &lt; z) {</span>
+<span class="cstat-no" title="statement not covered" >                z = x</span>;
+<span class="cstat-no" title="statement not covered" >                x = (y / x + x) / 2</span>;
+            }
+        } else <span class="cstat-no" title="statement not covered" >if (y != 0) {</span>
+<span class="cstat-no" title="statement not covered" >            z = 1</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function min(uint256 x, uint256 y) internal pure returns (uint256 z) {</span>
+<span class="cstat-no" title="statement not covered" >        return x &lt;= y ? x : y;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function max(uint256 x, uint256 y) internal pure returns (uint256 z) {</span>
+<span class="cstat-no" title="statement not covered" >        return x &gt;= y ? x : y;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function imin(int256 x, int256 y) internal pure returns (int256 z) {</span>
+<span class="cstat-no" title="statement not covered" >        return x &lt;= y ? x : y;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function imax(int256 x, int256 y) internal pure returns (int256 z) {</span>
+<span class="cstat-no" title="statement not covered" >        return x &gt;= y ? x : y;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 06 2022 05:02:09 GMT+0100 (British Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
